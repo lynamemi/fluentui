@@ -1,14 +1,32 @@
 import * as React from 'react';
-import { DirectionalHint, ContextualMenuItemType } from 'office-ui-fabric-react/lib/ContextualMenu';
+import { DirectionalHint, ContextualMenuItemType, IContextualMenuItem } from 'office-ui-fabric-react/lib/ContextualMenu';
 import { DefaultButton, IconButton, IButton } from 'office-ui-fabric-react/lib/Button';
 import { FocusZoneDirection } from 'office-ui-fabric-react/lib/FocusZone';
 import { autobind } from 'office-ui-fabric-react/lib/Utilities';
 import './ContextualMenuExample.scss';
 
-export class ContextualMenuCustomizationExample extends React.Component<{}, {}> {
+export interface IContextualMenuSelectExampleState {
+  selection?: { [key: string]: boolean };
+}
+
+let keys: string[] = ['none', 'bulb', 'run', 'plane', 'page', 'cake', 'soccer', 'home', 'emoji', 'work', 'coffee', 'people', 'stopwatch', 'music', 'lock'];
+
+export class ContextualMenuCustomizationExample extends React.Component<{}, IContextualMenuSelectExampleState> {
   private _button: IButton | undefined;
 
+  constructor() {
+    super();
+
+    this._onToggleSelect = this._onToggleSelect.bind(this);
+
+    this.state = {
+      selection: {},
+    };
+  }
+
   public render() {
+    let { selection } = this.state;
+
     return (
       <DefaultButton
         componentRef={ (button) => this._button = button }
@@ -41,92 +59,137 @@ export class ContextualMenuCustomizationExample extends React.Component<{}, {}> 
                   arrowDirection: FocusZoneDirection.bidirectional,
                   items: [
                     {
-                      key: 'none',
-                      name: 'None'
+                      key: keys[0],
+                      name: 'None',
+                      canCheck: true,
+                      isChecked: selection![keys[0]],
+                      onClick: this._onToggleSelect
                     },
                     {
-                      key: 'bulb',
+                      key: keys[1],
                       name: 'Lightbulb',
-                      onRender: this._renderCharmMenuItem,
-                      className: 'ms-ContextualMenu-customizationExample-item'
+                      // onRender: this._renderCharmMenuItem,
+                      // className: 'ms-ContextualMenu-customizationExample-item',
+                      canCheck: true,
+                      isChecked: selection![keys[1]],
+                      onClick: this._onToggleSelect
                     },
                     {
-                      key: 'run',
+                      key: keys[2],
                       name: 'Running',
                       onRender: this._renderCharmMenuItem,
-                      className: 'ms-ContextualMenu-customizationExample-item'
+                      className: 'ms-ContextualMenu-customizationExample-item',
+                      canCheck: true,
+                      isChecked: selection![keys[2]],
+                      onClick: this._onToggleSelect
                     },
                     {
-                      key: 'plane',
+                      key: keys[3],
                       name: 'Airplane',
                       onRender: this._renderCharmMenuItem,
-                      className: 'ms-ContextualMenu-customizationExample-item'
+                      className: 'ms-ContextualMenu-customizationExample-item',
+                      canCheck: true,
+                      isChecked: selection![keys[3]],
+                      onClick: this._onToggleSelect
                     },
                     {
-                      key: 'page',
+                      key: keys[4],
                       name: 'Page',
                       onRender: this._renderCharmMenuItem,
-                      className: 'ms-ContextualMenu-customizationExample-item'
+                      className: 'ms-ContextualMenu-customizationExample-item',
+                      canCheck: true,
+                      isChecked: selection![keys[4]],
+                      onClick: this._onToggleSelect
                     },
                     {
-                      key: 'cake',
+                      key: keys[5],
                       name: 'Cake',
                       onRender: this._renderCharmMenuItem,
-                      className: 'ms-ContextualMenu-customizationExample-item'
+                      className: 'ms-ContextualMenu-customizationExample-item',
+                      canCheck: true,
+                      isChecked: selection![keys[5]],
+                      onClick: this._onToggleSelect
                     },
                     {
-                      key: 'soccer',
+                      key: keys[6],
                       name: 'Soccer',
                       onRender: this._renderCharmMenuItem,
-                      className: 'ms-ContextualMenu-customizationExample-item'
+                      className: 'ms-ContextualMenu-customizationExample-item',
+                      canCheck: true,
+                      isChecked: selection![keys[6]],
+                      onClick: this._onToggleSelect
                     },
                     {
-                      key: 'home',
+                      key: keys[7],
                       name: 'Home',
                       onRender: this._renderCharmMenuItem,
-                      className: 'ms-ContextualMenu-customizationExample-item'
+                      className: 'ms-ContextualMenu-customizationExample-item',
+                      canCheck: true,
+                      isChecked: selection![keys[7]],
+                      onClick: this._onToggleSelect
                     },
                     {
-                      key: 'emoji',
+                      key: keys[8],
                       name: 'Emoji2',
                       onRender: this._renderCharmMenuItem,
-                      className: 'ms-ContextualMenu-customizationExample-item'
+                      className: 'ms-ContextualMenu-customizationExample-item',
+                      canCheck: true,
+                      isChecked: selection![keys[8]],
+                      onClick: this._onToggleSelect
                     },
                     {
-                      key: 'work',
+                      key: keys[9],
                       name: 'Work',
                       onRender: this._renderCharmMenuItem,
-                      className: 'ms-ContextualMenu-customizationExample-item'
+                      className: 'ms-ContextualMenu-customizationExample-item',
+                      canCheck: true,
+                      isChecked: selection![keys[9]],
+                      onClick: this._onToggleSelect
                     },
                     {
-                      key: 'coffee',
+                      key: keys[10],
                       name: 'Coffee',
                       onRender: this._renderCharmMenuItem,
-                      className: 'ms-ContextualMenu-customizationExample-item'
+                      className: 'ms-ContextualMenu-customizationExample-item',
+                      canCheck: true,
+                      isChecked: selection![keys[10]],
+                      onClick: this._onToggleSelect
                     },
                     {
-                      key: 'people',
+                      key: keys[11],
                       name: 'People',
                       onRender: this._renderCharmMenuItem,
-                      className: 'ms-ContextualMenu-customizationExample-item'
+                      className: 'ms-ContextualMenu-customizationExample-item',
+                      canCheck: true,
+                      isChecked: selection![keys[11]],
+                      onClick: this._onToggleSelect
                     },
                     {
-                      key: 'stopwatch',
+                      key: keys[12],
                       name: 'Stopwatch',
                       onRender: this._renderCharmMenuItem,
-                      className: 'ms-ContextualMenu-customizationExample-item'
+                      className: 'ms-ContextualMenu-customizationExample-item',
+                      canCheck: true,
+                      isChecked: selection![keys[12]],
+                      onClick: this._onToggleSelect
                     },
                     {
-                      key: 'music',
+                      key: keys[13],
                       name: 'MusicInCollectionFill',
                       onRender: this._renderCharmMenuItem,
-                      className: 'ms-ContextualMenu-customizationExample-item'
+                      className: 'ms-ContextualMenu-customizationExample-item',
+                      canCheck: true,
+                      isChecked: selection![keys[13]],
+                      onClick: this._onToggleSelect
                     },
                     {
-                      key: 'lock',
+                      key: keys[14],
                       name: 'Lock',
                       onRender: this._renderCharmMenuItem,
-                      className: 'ms-ContextualMenu-customizationExample-item'
+                      className: 'ms-ContextualMenu-customizationExample-item',
+                      canCheck: true,
+                      isChecked: selection![keys[14]],
+                      onClick: this._onToggleSelect
                     }
                   ]
                 },
@@ -198,7 +261,20 @@ export class ContextualMenuCustomizationExample extends React.Component<{}, {}> 
   }
 
   @autobind
+  private _onToggleSelect(ev?: React.MouseEvent<HTMLButtonElement>, item?: IContextualMenuItem) {
+    let { selection } = this.state;
+    console.log('SELECTION-->', selection);
+
+    selection![item!.key] = !selection![item!.key];
+
+    this.setState({
+      selection: selection
+    });
+  }
+
+  @autobind
   private _renderCharmMenuItem(item: any) {
+    // console.log(item.isChecked, item);
     return (
       <IconButton
         iconProps={ { iconName: item.name } }
