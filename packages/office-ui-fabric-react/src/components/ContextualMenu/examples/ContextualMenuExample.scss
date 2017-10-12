@@ -68,4 +68,9 @@
       height: auto;
     }
   }
+
+  .selected-iconButton {
+    background-color: $ms-color-neutralQuaternaryAlt;
+    color: $ms-color-themeDarkAlt;
+  }
 }

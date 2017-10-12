@@ -4,9 +4,10 @@ import { DefaultButton, IconButton, IButton } from 'office-ui-fabric-react/lib/B
 import { FocusZoneDirection } from 'office-ui-fabric-react/lib/FocusZone';
 import { autobind } from 'office-ui-fabric-react/lib/Utilities';
 import './ContextualMenuExample.scss';
+import { MouseEvent } from 'react';
 
 export interface IContextualMenuSelectExampleState {
-  selection?: { [key: string]: boolean };
+  selection?: string;
 }
 
 let keys: string[] = ['none', 'bulb', 'run', 'plane', 'page', 'cake', 'soccer', 'home', 'emoji', 'work', 'coffee', 'people', 'stopwatch', 'music', 'lock'];
@@ -20,7 +21,7 @@ export class ContextualMenuCustomizationExample extends React.Component<{}, ICon
     this._onToggleSelect = this._onToggleSelect.bind(this);
 
     this.state = {
-      selection: {},
+      selection: 'none'
     };
   }
 
@@ -62,16 +63,20 @@ export class ContextualMenuCustomizationExample extends React.Component<{}, ICon
                       key: keys[0],
                       name: 'None',
                       canCheck: true,
-                      isChecked: selection![keys[0]],
+                      isChecked: true,
                       onClick: this._onToggleSelect
+                    },
+                    {
+                      key: 'divider_1',
+                      itemType: ContextualMenuItemType.Divider
                     },
                     {
                       key: keys[1],
                       name: 'Lightbulb',
-                      // onRender: this._renderCharmMenuItem,
-                      // className: 'ms-ContextualMenu-customizationExample-item',
+                      onRender: this._renderCharmMenuItem,
+                      className: 'ms-ContextualMenu-customizationExample-item',
                       canCheck: true,
-                      isChecked: selection![keys[1]],
+                      isChecked: keys[1],
                       onClick: this._onToggleSelect
                     },
                     {
@@ -260,27 +265,47 @@ export class ContextualMenuCustomizationExample extends React.Component<{}, ICon
     }
   }
 
+  // @autobind
+  // private _onToggleSelect(ev?: React.MouseEvent<HTMLButtonElement>, item?: IContextualMenuItem) {
+  //   let { selection } = this.state;
+
+  //   selection![item!.key] = !selection![item!.key];
+
+  //   this.setState({
+  //     selection: selection
+  //   });
+
+  //   item && item.isChecked && console.log('ITEM IS CHECKED', item.isChecked);
+  //   console.log('after select state', selection, selection!, !selection!, item!, item!.key);
+  // }
+
   @autobind
-  private _onToggleSelect(ev?: React.MouseEvent<HTMLButtonElement>, item?: IContextualMenuItem) {
+  private _onToggleSelect(event: MouseEvent<HTMLButtonElement>) {
     let { selection } = this.state;
-    console.log('SELECTION-->', selection);
+    let element = event.target as HTMLButtonElement;
+    let reactId = element.getAttribute('data-reactid');
 
-    selection![item!.key] = !selection![item!.key];
-
-    this.setState({
-      selection: selection
+    keys.forEach(key => {
+      if (reactId && reactId.indexOf(key) > -1) {
+        selection![key] = !selection![key];
+        this.setState({
+          selection: selection
+        });
+      }
     });
+    console.log(this.state);
   }
 
   @autobind
   private _renderCharmMenuItem(item: any) {
-    // console.log(item.isChecked, item);
+    let iconClasses = 'ms-ContextualMenu-customizationExample-icon ms-ContextualMenu-link';
+
     return (
       <IconButton
         iconProps={ { iconName: item.name } }
-        className='ms-ContextualMenu-customizationExample-icon ms-ContextualMenu-link'
+        className={ item.isChecked ? iconClasses + ' selected-iconButton' : iconClasses }
         data-is-focusable={ true }
-        onClick={ this._dismissMenu }
+        onClick={ this._onToggleSelect }
       />
     );
   }
