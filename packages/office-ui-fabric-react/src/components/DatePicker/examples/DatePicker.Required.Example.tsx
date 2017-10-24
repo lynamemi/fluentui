@@ -87,8 +87,19 @@ export class DatePickerRequiredExample extends React.Component<any, IDatePickerR
     return (
       <div className='ms-DatePickerExample'>
         <p>Validation will happen when Date Picker loses focus.</p>
-        <DatePicker label='Date required' isRequired={ true } firstDayOfWeek={ firstDayOfWeek } strings={ DayPickerStrings } placeholder='Select a date...' />
-        <DatePicker isRequired={ true } firstDayOfWeek={ firstDayOfWeek } strings={ DayPickerStrings } placeholder='Select a date (no label)...' />
+        <DatePicker
+          label='Date required'
+          isRequired={ true }
+          firstDayOfWeek={ firstDayOfWeek }
+          strings={ DayPickerStrings }
+          placeholder='Select a date...'
+        />
+        <DatePicker
+          isRequired={ true }
+          firstDayOfWeek={ firstDayOfWeek }
+          strings={ DayPickerStrings }
+          placeholder='Select a date (no label)...'
+        />
       </div>
     );
   }
