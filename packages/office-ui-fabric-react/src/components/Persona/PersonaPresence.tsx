@@ -8,7 +8,7 @@ import {
   IPersonaProps,
   PersonaPresence as PersonaPresenceEnum
 } from './Persona.types';
-import * as stylesImport from './Persona.scss';
+import * as stylesImport from './PersonaPresence.scss';
 const styles: any = stylesImport;
 const coinSizeFontScaleFactor = 6;
 const coinSizePresenceScaleFactor = 3;
