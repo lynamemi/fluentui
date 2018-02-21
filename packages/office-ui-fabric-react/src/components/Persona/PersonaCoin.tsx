@@ -21,7 +21,7 @@ import {
 import {
   Icon
 } from '../../Icon';
-import * as stylesImport from './Persona.scss';
+import * as stylesImport from './PersonaCoin.scss';
 const styles: any = stylesImport;
 
 const SIZE_TO_PIXELS: { [key: number]: number } = {
@@ -79,7 +79,7 @@ export class PersonaCoin extends React.Component<IPersonaProps, IPersonaState> {
       onRenderCoin = this._onRenderCoin,
       onRenderInitials = this._onRenderInitials,
       imageShouldStartVisible
-     } = this.props;
+    } = this.props;
 
     let size = this.props.size as PersonaSize;
     let divProps = getNativeProps(this.props, divProperties);
@@ -146,7 +146,7 @@ export class PersonaCoin extends React.Component<IPersonaProps, IPersonaState> {
 
     let size = this.props.size as PersonaSize;
 
-    return(
+    return (
       <Image
         className={ css('ms-Persona-image', styles.image) }
         imageFit={ ImageFit.cover }
