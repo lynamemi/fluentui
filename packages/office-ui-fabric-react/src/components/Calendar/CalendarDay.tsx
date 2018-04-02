@@ -130,6 +130,26 @@ export class CalendarDay extends BaseComponent<ICalendarDayProps, ICalendarDaySt
         ) }
         id={ dayPickerId }
       >
+        <div className={ css('ms-DatePicker-header', styles.header) } >
+          <div aria-live='polite' aria-relevant='text' aria-atomic='true' id={ monthAndYearId }>
+            { this.props.onHeaderSelect ?
+              <div
+                className={ css('ms-DatePicker-monthAndYear js-showMonthPicker', styles.monthAndYear, styles.headerToggleView) }
+                onClick={ this._onHeaderSelect }
+                onKeyDown={ this._onHeaderKeyDown }
+                aria-label={ dateTimeFormatter.formatMonthYear(navigatedDate, strings) }
+                role='button'
+                tabIndex={ 0 }
+              >
+                { dateTimeFormatter.formatMonthYear(navigatedDate, strings) }
+              </div>
+              :
+              <div className={ css('ms-DatePicker-monthAndYear', styles.monthAndYear) }>
+                { dateTimeFormatter.formatMonthYear(navigatedDate, strings) }
+              </div>
+            }
+          </div>
+        </div>
         <div className={ css('ms-DatePicker-monthComponents', styles.monthComponents) }>
           <div className={ css('ms-DatePicker-navContainer', styles.navContainer) }>
             <button
@@ -163,26 +183,6 @@ export class CalendarDay extends BaseComponent<ICalendarDayProps, ICalendarDaySt
             </button >
           </div >
         </div >
-        <div className={ css('ms-DatePicker-header', styles.header) } >
-          <div aria-live='polite' aria-relevant='text' aria-atomic='true' id={ monthAndYearId }>
-            { this.props.onHeaderSelect ?
-              <div
-                className={ css('ms-DatePicker-monthAndYear js-showMonthPicker', styles.monthAndYear, styles.headerToggleView) }
-                onClick={ this._onHeaderSelect }
-                onKeyDown={ this._onHeaderKeyDown }
-                aria-label={ dateTimeFormatter.formatMonthYear(navigatedDate, strings) }
-                role='button'
-                tabIndex={ 0 }
-              >
-                { dateTimeFormatter.formatMonthYear(navigatedDate, strings) }
-              </div>
-              :
-              <div className={ css('ms-DatePicker-monthAndYear', styles.monthAndYear) }>
-                { dateTimeFormatter.formatMonthYear(navigatedDate, strings) }
-              </div>
-            }
-          </div>
-        </div>
         <FocusZone>
           {
             showWeekNumbers ?

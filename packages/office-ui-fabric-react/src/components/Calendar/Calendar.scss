@@ -70,15 +70,15 @@ $Calendar-dayPicker-margin: 10px;
   color: $ms-color-neutralPrimary;
   margin-top: -1px;
   font-weight: $ms-font-weight-semilight;
-  padding: 0 5px;
+  padding: 0 4px;
 }
 
 .monthAndYear {
-  @include margin-left(5px);
+  @include margin-left(4px);
 }
 
 .year {
-  @include margin-left(5px);
+  @include margin-left(4px);
 }
 
 // The calendar table of dates.
@@ -185,19 +185,6 @@ $Calendar-dayPicker-margin: 10px;
   background: $ms-color-neutralLight;
 }
 
-.dayBackground {
-  // border-radius: 2px;
-}
-
-.weekBackground {
-  &:first-child {
-    // border-radius: 2px 0px 0px 2px;
-  }
-  &:last-child {
-    // border-radius: 0px 2px 2px 0px;
-  }
-}
-
 .showWeekNumbers {
   .weekNumbers {
     position: absolute;
@@ -254,11 +241,9 @@ $Calendar-dayPicker-margin: 10px;
 .yearComponents,
 .decadeComponents {
   display: inline-flex;
-  margin-left: 3px;
-}
-
-.yearComponents {
-  margin-left: 3px;
+  margin-right: 8px;
+  right: 4px;
+  position: absolute;
 }
 
 .prevMonth,
@@ -413,6 +398,7 @@ $Calendar-dayPicker-margin: 10px;
   .dayPicker,
   .monthPicker {
     min-height: 214px;
+    position: relative;
   }
   .header {
     height: $Calendar-day;
