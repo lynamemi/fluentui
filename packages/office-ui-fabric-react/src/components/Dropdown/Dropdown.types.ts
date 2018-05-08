@@ -43,9 +43,11 @@ export interface IDropdownProps extends ISelectableDroppableTextProps<HTMLDivEle
 
   /**
    * Custom width for dropdown. If value is 0, width of the input field is used.
+   * 'auto' fits the callout width to the width of the options;
+   * It's useful for long option text where readability is important.
    * @default 0
    */
-  dropdownWidth?: number;
+  dropdownWidth?: number | 'auto';
 
   responsiveMode?: ResponsiveMode;
 

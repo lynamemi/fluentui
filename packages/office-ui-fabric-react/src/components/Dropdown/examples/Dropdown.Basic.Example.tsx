@@ -158,8 +158,24 @@ export class DropdownBasicExample extends BaseComponent<{}, {
           onFocus={ this._log('onFocus called') }
           onBlur={ this._log('onBlur called') }
         />
+        <Dropdown
+          placeHolder='Select an Option'
+          label='Basic example with long option text:'
+          options={
+            [
+              { key: 'A', text: 'Really long option text, even longer than the input field.' },
+              { key: 'B', text: 'Option b' },
+              { key: 'C', text: 'Option c' },
+              { key: 'D', text: 'Option d' },
+              { key: 'E', text: 'Option e' }
+            ]
+          }
+          onFocus={ this._log('onFocus called') }
+          onBlur={ this._log('onBlur called') }
+          componentRef={ this._basicDropdown }
+          dropdownWidth={ 'auto' }
+        />
       </div>
-
     );
   }
 
