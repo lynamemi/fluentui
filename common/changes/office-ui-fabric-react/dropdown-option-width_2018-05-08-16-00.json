@@ -2,7 +2,7 @@
   "changes": [
     {
       "packageName": "office-ui-fabric-react",
-      "comment": "Dropdown: Allow auto width to be set for dropdownWidth.",
+      "comment": "Dropdown and Callout: Allow auto width to be set for calloutWidth.",
       "type": "minor"
     }
   ],
