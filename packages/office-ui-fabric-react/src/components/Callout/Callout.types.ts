@@ -53,7 +53,7 @@ export interface ICalloutProps {
    * Custom width for callout including borders. If value is 0, no width is applied.
    * @default 0
    */
-  calloutWidth?: number;
+  calloutWidth?: number | 'auto';
 
   /**
    * The background color of the Callout in hex format ie. #ffffff.
