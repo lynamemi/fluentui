@@ -91,13 +91,12 @@ export class ProgressIndicatorBase extends BaseComponent<IProgressIndicatorProps
 
   private _onRenderProgress = (props: IProgressIndicatorProps): JSX.Element => {
     const {
+      ariaValueText,
       barHeight,
       className,
       getStyles,
       theme,
     } = this.props;
-
-    const ariaValueText = this.props.ariaValueText || '%';
 
     const percentComplete = typeof this.props.percentComplete === 'number' ?
       Math.min(100, Math.max(0, this.props.percentComplete * 100)) :
@@ -118,6 +117,8 @@ export class ProgressIndicatorBase extends BaseComponent<IProgressIndicatorProps
     const ariaValueMin = percentComplete !== undefined ? 0 : undefined;
     const ariaValueMax = percentComplete !== undefined ? 100 : undefined;
     const ariaValueNow = percentComplete !== undefined ? Math.floor(percentComplete!) : undefined;
+    const percentCompleteAriaText = ariaValueText ? ariaValueText : this.state.percentComplete + '%';
+    const indeterminateAriaText = ariaValueText ? ariaValueText : 'Working on it';
 
     return (
       <div className={ classNames.itemProgress }>
@@ -131,7 +132,22 @@ export class ProgressIndicatorBase extends BaseComponent<IProgressIndicatorProps
           aria-valuenow={ ariaValueNow }
           aria-valuetext={ ariaValueText }
         />
-        <span aria-live='polite'>{ this.state.percentComplete + ariaValueText }</span>
+        { percentComplete ?
+          // aria-live is used in lieu of aria-valuenow to circumvent the need for tabbing to hear the screen reader
+          <span
+            aria-live='polite'
+            aria-label={ percentCompleteAriaText }
+          // hidden
+          >
+            {/* { percentCompleteAriaText } */ }
+          </span>
+          : <span
+            aria-live='polite'
+            hidden
+          >
+            { indeterminateAriaText }
+          </span>
+        }
       </div>
     );
   }
