@@ -512,7 +512,10 @@ export const AppState: IAppState = {
           title: 'Shimmer',
           url: '#/components/shimmer',
           component: () => <LoadingComponent title="Shimmer" />,
-          getComponent: cb => require.ensure([], (require) => cb(require<any>('../../pages/Components/ShimmerComponentPage').ShimmerComponentPage))
+          getComponent: cb =>
+            require.ensure([], require =>
+              cb(require<any>('../../pages/Components/ShimmerComponentPage').ShimmerComponentPage)
+            )
         },
         {
           title: 'Slider',
@@ -651,20 +654,6 @@ export const AppState: IAppState = {
       isUhfLink: true,
       getComponent: cb =>
         require.ensure([], require => cb(require<any>('../../pages/ResourcesPage/ResourcesPage').ResourcesPage))
-    },
-    {
-      title: 'Blog',
-      url: '#/blog',
-      className: 'blogPage',
-      isUhfLink: true,
-      getComponent: cb => require.ensure([], require => cb(require<any>('../../pages/BlogPage/BlogPage').BlogPage))
-    },
-    {
-      title: 'Blog Post',
-      url: '#/blog/blog-post',
-      className: 'blogPostPage',
-      isHiddenFromMainNav: true,
-      getComponent: cb => require.ensure([], require => cb(require<any>('../../pages/BlogPage/BlogPost').BlogPost))
     },
     {
       title: 'Fabric JS',
