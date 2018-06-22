@@ -1,6 +1,163 @@
 # Change Log - @uifabric/experiments
 
-This log was last generated on Wed, 16 May 2018 00:05:17 GMT and should not be manually modified.
+This log was last generated on Fri, 22 Jun 2018 16:21:15 GMT and should not be manually modified.
+
+## 6.10.0
+Fri, 22 Jun 2018 16:21:15 GMT
+
+### Minor changes
+
+- Toggle component fluent example set up in experiments
+- M365 Common Recommendation control including examples with Image Illustration and Data Viz
+
+## 6.9.0
+Thu, 21 Jun 2018 19:27:25 GMT
+
+### Minor changes
+
+- Add Fluent type ramp, update color names
+
+### Patches
+
+- CardDidMount callback for making api calls, additional ref incase there is a use case where there is no state, compoundButtonStack  size variation and gridList component v1.1 changes
+
+## 6.8.0
+Wed, 20 Jun 2018 23:33:29 GMT
+
+### Minor changes
+
+- Updated ChoiceGroup FluentStyles to include 'checked' style prop
+- Added Checkbox and ChoiceGroup to Fluent Styles Page
+- label fluentstyles
+- Added examples for Rating and Slider to FluentStyles page - no style changes
+- expose Nav to teams not using npm
+
+## 6.7.0
+Wed, 20 Jun 2018 10:25:55 GMT
+
+### Minor changes
+
+- Experiments/Nav component: Fix to display nav group header on show more
+
+### Patches
+
+- Prettier fixes
+
+## 6.6.0
+Tue, 19 Jun 2018 10:26:26 GMT
+
+### Minor changes
+
+- Added Fluent Styles Page
+- Update Fluent colors
+- Update Fluent colors and theme
+
+## 6.5.0
+Mon, 18 Jun 2018 16:57:14 GMT
+
+### Minor changes
+
+- Dashboard Card Component for Admin Portals Dashboard which will be hosted inside react-grid-layout. 
+- Add GridList component into the existing Dashboard Card Component
+
+### Patches
+
+- Add alias to CommandBar to final version
+- Fix import mistakes
+
+## 6.4.0
+Fri, 08 Jun 2018 18:34:17 GMT
+
+### Minor changes
+
+- add style arg to customizable
+
+## 6.3.0
+Thu, 07 Jun 2018 16:35:34 GMT
+
+### Minor changes
+
+- Create CollapsibleSection component and createComponent utility.
+- Tweaked the lint rules.
+
+### Patches
+
+- Code format changes
+
+## 6.2.0
+Tue, 05 Jun 2018 10:23:03 GMT
+
+### Minor changes
+
+- Experiment/Nav component: hide nav group header if the links under it are hidden
+- ShimmerTile: Moves ShimmerTile to Tile component as it's only purpose is create a mock for a tile and itself alone never renders a Shimmer animation.
+
+## 6.1.2
+Tue, 05 Jun 2018 00:44:30 GMT
+
+### Patches
+
+- Added Prettier
+
+## 6.1.1
+Mon, 04 Jun 2018 10:16:13 GMT
+
+### Patches
+
+- Updating react typings.
+- Fixed tests to be compatible with jest 23
+
+## 6.1.0
+Fri, 01 Jun 2018 10:18:43 GMT
+
+### Minor changes
+
+- Experiments/Nav component: display "show more" link only if there is atleast one hidden link
+- Shimmer: Shimmer refactor to use new props and deprecate others. Build more examples of Shimmer use.
+
+## 6.0.0
+Wed, 30 May 2018 20:28:33 GMT
+
+### Breaking changes
+
+- Command Bar: Promoted to main office-ui-fabric-react package.
+- Minimum React version is now 16.3.2.
+
+## 5.44.0
+Mon, 28 May 2018 10:23:24 GMT
+
+### Minor changes
+
+- Shimmer: Refactors and enhances Shimmer with more features.
+
+## 5.43.0
+Fri, 25 May 2018 21:30:43 GMT
+
+### Minor changes
+
+- Experiments/Nav component: Enable auto expand until the next manual expand disables the auto expand
+
+## 5.42.0
+Fri, 25 May 2018 16:53:46 GMT
+
+### Minor changes
+
+- Experiments/Nav component: Auto select/expand based on the selectedKey prop
+- Keyboard support for the slim version of experiments/Nav component and added aria attributes
+
+## 5.41.0
+Tue, 22 May 2018 10:29:12 GMT
+
+### Minor changes
+
+- Implementation of the Chiclet component
+
+## 5.40.0
+Mon, 21 May 2018 10:29:16 GMT
+
+### Minor changes
+
+- Screen reader support for the toggle nav menu and made the toggle nav menu customizable through props
 
 ## 5.39.0
 Wed, 16 May 2018 00:05:17 GMT

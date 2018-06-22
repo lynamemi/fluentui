@@ -17,18 +17,19 @@ exports[`Pivot renders Pivot correctly 1`] = `
       role="tablist"
     >
       <button
-        aria-describedby={null}
+        aria-describedby={undefined}
+        aria-disabled={undefined}
         aria-label={undefined}
-        aria-labelledby={null}
+        aria-labelledby={undefined}
         aria-pressed={undefined}
         aria-selected={true}
         className=
             ms-Button
+            ms-Button--action
+            ms-Button--command
             ms-Pivot-link
             is-selected
             undefined
-            ms-Button--action
-            ms-Button--command
             {
               -moz-osx-font-smoothing: grayscale;
               -webkit-font-smoothing: antialiased;
@@ -97,7 +98,11 @@ exports[`Pivot renders Pivot correctly 1`] = `
         id="Pivot0-Tab0"
         name=""
         onClick={[Function]}
+        onKeyDown={[Function]}
         onKeyPress={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
         role="tab"
         type="button"
       >
@@ -125,16 +130,17 @@ exports[`Pivot renders Pivot correctly 1`] = `
         </div>
       </button>
       <button
-        aria-describedby={null}
+        aria-describedby={undefined}
+        aria-disabled={undefined}
         aria-label={undefined}
-        aria-labelledby={null}
+        aria-labelledby={undefined}
         aria-pressed={undefined}
         aria-selected={false}
         className=
             ms-Button
-            ms-Pivot-link
             ms-Button--action
             ms-Button--command
+            ms-Pivot-link
             {
               -moz-osx-font-smoothing: grayscale;
               -webkit-font-smoothing: antialiased;
@@ -203,7 +209,11 @@ exports[`Pivot renders Pivot correctly 1`] = `
         id="Pivot0-Tab1"
         name=""
         onClick={[Function]}
+        onKeyDown={[Function]}
         onKeyPress={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
         role="tab"
         type="button"
       >
@@ -260,18 +270,19 @@ exports[`Pivot renders Pivot correctly with custom className 1`] = `
       role="tablist"
     >
       <button
-        aria-describedby={null}
+        aria-describedby={undefined}
+        aria-disabled={undefined}
         aria-label={undefined}
-        aria-labelledby={null}
+        aria-labelledby={undefined}
         aria-pressed={undefined}
         aria-selected={true}
         className=
             ms-Button
+            ms-Button--action
+            ms-Button--command
             ms-Pivot-link
             is-selected
             undefined
-            ms-Button--action
-            ms-Button--command
             {
               -moz-osx-font-smoothing: grayscale;
               -webkit-font-smoothing: antialiased;
@@ -340,7 +351,11 @@ exports[`Pivot renders Pivot correctly with custom className 1`] = `
         id="Pivot8-Tab0"
         name=""
         onClick={[Function]}
+        onKeyDown={[Function]}
         onKeyPress={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
         role="tab"
         type="button"
       >
@@ -368,16 +383,17 @@ exports[`Pivot renders Pivot correctly with custom className 1`] = `
         </div>
       </button>
       <button
-        aria-describedby={null}
+        aria-describedby={undefined}
+        aria-disabled={undefined}
         aria-label={undefined}
-        aria-labelledby={null}
+        aria-labelledby={undefined}
         aria-pressed={undefined}
         aria-selected={false}
         className=
             ms-Button
-            ms-Pivot-link
             ms-Button--action
             ms-Button--command
+            ms-Pivot-link
             {
               -moz-osx-font-smoothing: grayscale;
               -webkit-font-smoothing: antialiased;
@@ -446,7 +462,11 @@ exports[`Pivot renders Pivot correctly with custom className 1`] = `
         id="Pivot8-Tab1"
         name=""
         onClick={[Function]}
+        onKeyDown={[Function]}
         onKeyPress={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
         role="tab"
         type="button"
       >

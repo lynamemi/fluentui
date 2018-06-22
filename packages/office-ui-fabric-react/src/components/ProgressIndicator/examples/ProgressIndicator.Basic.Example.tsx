@@ -1,7 +1,5 @@
 import * as React from 'react';
-import {
-  ProgressIndicator
-} from 'office-ui-fabric-react/lib/ProgressIndicator';
+import { ProgressIndicator } from 'office-ui-fabric-react/lib/ProgressIndicator';
 import { Async } from 'office-ui-fabric-react/lib/Utilities';
 import { DefaultButton } from 'office-ui-fabric-react/lib/Button';
 
@@ -10,10 +8,9 @@ export interface IProgressIndicatorBasicExampleState {
 }
 
 const INTERVAL_DELAY = 100;
-const INTERVAL_INCREMENT = .01;
+const INTERVAL_INCREMENT = 0.01;
 
 export class ProgressIndicatorBasicExample extends React.Component<{}, IProgressIndicatorBasicExampleState> {
-
   private _interval: number;
   private _async: Async;
 
@@ -36,19 +33,9 @@ export class ProgressIndicatorBasicExample extends React.Component<{}, IProgress
 
     return (
       <div>
-        <ProgressIndicator
-          label='Example title'
-          description='Example description'
-          percentComplete={ percentComplete }
-        />
-        <DefaultButton
-          text='Reset'
-          onClick={ this._resetProgress }
-        />
-        <DefaultButton
-          text='Start'
-          onClick={ this._startProgressDemo }
-        />
+        <ProgressIndicator label="Example title" description="Example description" percentComplete={percentComplete} />
+        <DefaultButton text="Reset" onClick={this._resetProgress} />
+        <DefaultButton text="Start" onClick={this._startProgressDemo} />
       </div>
     );
   }
@@ -56,7 +43,7 @@ export class ProgressIndicatorBasicExample extends React.Component<{}, IProgress
   private _resetProgress = (): void => {
     this.setState({ percentComplete: 0 });
     this._async.clearInterval(this._interval);
-  }
+  };
 
   private _startProgressDemo = (): void => {
     this._interval = this._async.setInterval(() => {
@@ -71,5 +58,5 @@ export class ProgressIndicatorBasicExample extends React.Component<{}, IProgress
         percentComplete: percentComplete
       });
     }, INTERVAL_DELAY);
-  }
+  };
 }
