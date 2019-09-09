@@ -1,5 +1,11 @@
 `BottomSheet` and `BottomSheetDialog` are used to display a modal list of menu items. They slide up over the main app content as a result of a user triggered action. `BottomSheet` retains state on configuration change.
 
+And more content
+
 | BottomSheet with single line items                                                                                                                                                                    | BottomSheet with double line items                                                                                                                                                                    |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | <img src="https://static2.sharepointonline.com/files/fabric/fabric-website/images/controls/android/surfaces/bottom_sheet_single_line.png" alt="Example of a Drawer on Android" style="width: 50%;" /> | <img src="https://static2.sharepointonline.com/files/fabric/fabric-website/images/controls/android/surfaces/bottom_sheet_double_line.png" alt="Example of a Drawer on Android" style="width: 50%;" /> |
+
+| Heading | Title 2 |
+| ------- | ------- |
+| image 1 | image 2 |
