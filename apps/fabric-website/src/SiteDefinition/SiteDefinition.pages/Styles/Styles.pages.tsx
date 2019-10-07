@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { INavPage, LoadingComponent } from '@uifabric/example-app-base/lib/index2';
-import { stylesPagesWeb } from './index';
+import { stylesPagesWeb, stylesPagesAndroid, stylesPagesIOS } from './index';
 
 export const StylesPages: INavPage = {
   title: 'Styles',
@@ -12,6 +12,8 @@ export const StylesPages: INavPage = {
   component: () => <LoadingComponent title="Styles" />,
   getComponent: cb => require.ensure([], require => cb(require<any>('../../../pages/Overviews/StylesPage/StylesPage').StylesPage)),
   platforms: {
-    web: stylesPagesWeb
+    web: stylesPagesWeb,
+    android: stylesPagesAndroid,
+    ios: stylesPagesIOS
   }
 };
