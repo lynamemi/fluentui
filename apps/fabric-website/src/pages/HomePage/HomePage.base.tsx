@@ -204,6 +204,7 @@ export class HomePageBase extends React.Component<IHomePageProps, IHomePageState
               iOS
             </MarkdownHeader>
             <ul className={classNames.cardList}>
+              <li className={classNames.cardListItem}>{this._renderLink('#/styles/ios', 'Styles')}</li>
               <li className={classNames.cardListItem}>{this._renderLink('#/controls/ios', 'Controls')}</li>
               <li className={classNames.cardListItem}>{this._renderLink('#/get-started/ios', 'Get started')}</li>
             </ul>
@@ -214,6 +215,7 @@ export class HomePageBase extends React.Component<IHomePageProps, IHomePageState
               Android
             </MarkdownHeader>
             <ul className={classNames.cardList}>
+              <li className={classNames.cardListItem}>{this._renderLink('#/styles/android', 'Styles')}</li>
               <li className={classNames.cardListItem}>{this._renderLink('#/controls/android', 'Controls')}</li>
               <li className={classNames.cardListItem}>{this._renderLink('#/get-started/android', 'Get started')}</li>
             </ul>
