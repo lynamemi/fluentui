@@ -3752,10 +3752,10 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
-beachball@^1.13.0:
-  version "1.13.0"
-  resolved "https://registry.yarnpkg.com/beachball/-/beachball-1.13.0.tgz#c87e71c565f7b29d36bf2f8a06c73d70fd79b6d8"
-  integrity sha512-RaTATKvLpX8jnz6nkkhM3jMv0RrZd4x13UMXnj3GDhl9fgx0ru6UMuXxFwUyRMzEMHKCcJhWr7LkQV56WXn+Og==
+beachball@^1.14.2:
+  version "1.14.2"
+  resolved "https://registry.npmjs.org/beachball/-/beachball-1.14.2.tgz#aab2a947a8f607962b91f8ec0ed3c9a9891a3cf7"
+  integrity sha512-/NfY72bBBcykAuZ7o14OzPEhygJgfDpZqIdZWxH3nISnO1xSwnZlGosrUixsQjgcuibQ1q9sLDmP5VO/06XtSA==
   dependencies:
     fs-extra "^8.0.1"
     git-url-parse "^11.1.2"
@@ -6696,10 +6696,10 @@ flamebearer@^1.1.3:
     concat-stream "^1.6.2"
     opn "^5.3.0"
 
-flamegrill@0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/flamegrill/-/flamegrill-0.0.7.tgz#025fbf428ae7b92bae32a3d68c9b502bbcbc92f8"
-  integrity sha512-Xu4BzuSTa1/FOBJYbNxVarCHJoz+BuquXNhhkhT4LrFnQ3vy5WChrh8SO58toJ96aYs0hIjn51GmoRXr9JdGWw==
+flamegrill@0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/flamegrill/-/flamegrill-0.1.3.tgz#3a92a87b7ff259cae16175ac74ea7dcbda3b2539"
+  integrity sha512-9oyBxKgsU+tvoiI7/r4tasU8wIbN91h+kwx+bZTPag01LwshqmEVwVANzBTTWtzeaeXw/2IGXi44D5kVTE8keQ==
   dependencies:
     concat-stream "^2.0.0"
     flamebearer "^1.1.3"

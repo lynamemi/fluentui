@@ -126,8 +126,8 @@ export class BaseButton extends BaseComponent<IBaseButtonProps, IBaseButtonState
           menuIconProps && menuIconProps.className,
           isPrimaryButtonDisabled!,
           checked!,
-          !!this.props.menuProps,
           !menuHidden,
+          !!this.props.menuProps,
           this.props.split,
           !!allowDisabledFocus
         )
@@ -324,12 +324,12 @@ export class BaseButton extends BaseComponent<IBaseButtonProps, IBaseButtonState
    */
   private _shouldRenderMenu() {
     const { menuHidden } = this.state;
-    const { persistMenu } = this.props;
+    const { persistMenu, renderPersistedMenuHiddenOnMount } = this.props;
 
     if (!menuHidden) {
       // Always should render a menu when it is expanded
       return true;
-    } else if (persistMenu && this._renderedVisibleMenu) {
+    } else if (persistMenu && (this._renderedVisibleMenu || renderPersistedMenuHiddenOnMount)) {
       // _renderedVisibleMenu ensures that the first rendering of
       // the menu happens on-screen, as edge's scrollbar calculations are off if done while hidden.
       return true;
@@ -448,7 +448,6 @@ export class BaseButton extends BaseComponent<IBaseButtonProps, IBaseButtonState
   };
 
   private _onRenderMenu = (menuProps: IContextualMenuProps): JSX.Element => {
-    const { onDismiss = this._dismissMenu } = menuProps;
     const { persistMenu } = this.props;
     const { menuHidden } = this.state;
     const MenuType = this.props.menuAs || (ContextualMenu as React.ReactType<IContextualMenuProps>);
@@ -470,9 +469,20 @@ export class BaseButton extends BaseComponent<IBaseButtonProps, IBaseButtonState
         hidden={persistMenu ? menuHidden : undefined}
         className={css('ms-BaseButton-menuhost', menuProps.className)}
         target={this._isSplitButton ? this._splitButtonContainer.current : this._buttonElement.current}
-        onDismiss={onDismiss}
+        onDismiss={this._onDismissMenu}
       />
     );
+  };
+
+  private _onDismissMenu: IContextualMenuProps['onDismiss'] = ev => {
+    const { menuProps } = this.props;
+
+    if (menuProps && menuProps.onDismiss) {
+      menuProps.onDismiss(ev);
+    }
+    if (!ev || !ev.defaultPrevented) {
+      this._dismissMenu();
+    }
   };
 
   private _dismissMenu = (): void => {
@@ -509,6 +519,7 @@ export class BaseButton extends BaseComponent<IBaseButtonProps, IBaseButtonState
       primaryDisabled,
       menuProps,
       toggle,
+      role,
       primaryActionButtonProps
     } = this.props;
     let { keytipProps } = this.props;
@@ -530,7 +541,7 @@ export class BaseButton extends BaseComponent<IBaseButtonProps, IBaseButtonState
       keytipProps = this._getMemoizedMenuButtonKeytipProps(keytipProps);
     }
 
-    const containerProps = getNativeProps<React.HTMLAttributes<HTMLSpanElement>>(buttonProps, [], ['disabled', 'aria-label']);
+    const containerProps = getNativeProps<React.HTMLAttributes<HTMLSpanElement>>(buttonProps, [], ['disabled']);
 
     // Add additional props to apply on primary action button
     if (primaryActionButtonProps) {
@@ -541,7 +552,7 @@ export class BaseButton extends BaseComponent<IBaseButtonProps, IBaseButtonState
       <div
         {...containerProps}
         data-ktp-target={keytipAttributes ? keytipAttributes['data-ktp-target'] : undefined}
-        role={'button'}
+        role={role ? role : 'button'}
         aria-disabled={disabled}
         aria-haspopup={true}
         aria-expanded={!menuHidden}

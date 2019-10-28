@@ -7,8 +7,8 @@ exports[`Dropdown multi-select Renders multiselect Dropdown correctly 1`] = `
 
 >
   <div
-    aria-describedby="Dropdown0-option"
     aria-expanded="false"
+    aria-haspopup="listbox"
     className=
         ms-Dropdown
         {
@@ -99,6 +99,7 @@ exports[`Dropdown multi-select Renders multiselect Dropdown correctly 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     onKeyUp={[Function]}
+    onMouseDown={[Function]}
     tabIndex={0}
   >
     <span
@@ -180,8 +181,8 @@ exports[`Dropdown single-select Renders single-select Dropdown correctly 1`] = `
 
 >
   <div
-    aria-describedby="Dropdown0-option"
     aria-expanded="false"
+    aria-haspopup="listbox"
     className=
         ms-Dropdown
         {
@@ -272,6 +273,7 @@ exports[`Dropdown single-select Renders single-select Dropdown correctly 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     onKeyUp={[Function]}
+    onMouseDown={[Function]}
     role="listbox"
     tabIndex={0}
   >
