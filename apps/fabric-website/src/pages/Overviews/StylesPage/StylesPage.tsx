@@ -113,10 +113,29 @@ const webSections = [
   }
 ];
 
+const androidSections = [
+  {
+    className: styles.card,
+    content: (
+      <Link href="#/styles/web/typography" className={styles.cardLink}>
+        <div className={styles.cardContent}>
+          <MarkdownHeader as="h2" id="typography" className={styles.cardTitle}>
+            Typography
+          </MarkdownHeader>
+          <Icon iconName="FontSize" className={styles.cardIcon} />
+        </div>
+      </Link>
+    )
+  }
+];
+
 function _otherSections(platform: Platforms): IPageSectionProps[] {
   switch (platform) {
     case 'web':
       return webSections;
+
+    case 'android':
+      return androidSections;
 
     default:
       return [
